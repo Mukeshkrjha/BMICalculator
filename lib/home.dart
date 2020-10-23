@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_health_bmi_calculator/custom_widget/card.dart';
+import 'package:flutter_health_bmi_calculator/custom_widget/round_button.dart';
 import 'package:flutter_health_bmi_calculator/util/app_constant.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -18,6 +19,8 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   GENDER selectedGender;
   int selectedHeight = 185;
+  int selectedWeight = 50;
+  int selectedAge = 20;
 
   @override
   Widget build(BuildContext context) {
@@ -87,17 +90,25 @@ class _HomeState extends State<Home> {
                       )
                     ],
                   ),
-                  Slider(
-                    value: selectedHeight.toDouble(),
-                    min: kSLIDER_MIN_VALUE,
-                    max: kSLIDER_MAX_VALUE,
-                    activeColor: kSLIDER_ACTIVE_COLOR,
-                    inactiveColor: kSLIDER_INACTIVE_COLOR,
-                    onChanged: (double value) {
-                      setState(() {
-                        selectedHeight = value.round();
-                      });
-                    },
+                  SliderTheme(
+                    data: SliderTheme.of(context).copyWith(
+                        activeTrackColor: kSLIDER_ACTIVE_TRACK_COLOR,
+                        thumbColor: kSLIDER_THUMB_COLOR,
+                        overlayColor: kSLIDER_OVERLAY_COLOR,
+                        thumbShape:
+                            RoundSliderThumbShape(enabledThumbRadius: 15.0),
+                        overlayShape:
+                            RoundSliderOverlayShape(overlayRadius: 30.0)),
+                    child: Slider(
+                      value: selectedHeight.toDouble(),
+                      min: kSLIDER_MIN_VALUE,
+                      max: kSLIDER_MAX_VALUE,
+                      onChanged: (double value) {
+                        setState(() {
+                          selectedHeight = value.round();
+                        });
+                      },
+                    ),
                   )
                 ],
               ),
@@ -105,24 +116,107 @@ class _HomeState extends State<Home> {
           ),
           Expanded(
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Expanded(
                   child: CustomCard(
                     color: kACTIVE_CARD_COLOR,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'WEIGHT',
+                          style: kTEXT_STYLE,
+                        ),
+                        Text(
+                          selectedWeight.toString(),
+                          style: kLARGE_TEXT_STYLE,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            RoundButton(
+                                onPress: () {
+                                  setState(() {
+                                    if (selectedWeight > 0) selectedWeight--;
+                                  });
+                                },
+                                icon: FontAwesomeIcons.minus,
+                                color: kFAB_BG),
+                            SizedBox(
+                              width: 20.0,
+                            ),
+                            RoundButton(
+                                onPress: () {
+                                  setState(() {
+                                    selectedWeight++;
+                                  });
+                                },
+                                icon: FontAwesomeIcons.plus,
+                                color: kFAB_BG),
+                          ],
+                        )
+                      ],
+                    ),
                   ),
                 ),
                 Expanded(
                   child: CustomCard(
                     color: kACTIVE_CARD_COLOR,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'AGE',
+                          style: kTEXT_STYLE,
+                        ),
+                        Text(
+                          selectedAge.toString(),
+                          style: kLARGE_TEXT_STYLE,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            RoundButton(
+                                onPress: () {
+                                  setState(() {
+                                    if (selectedAge > 0) selectedAge--;
+                                  });
+                                },
+                                icon: FontAwesomeIcons.minus,
+                                color: kFAB_BG),
+                            SizedBox(
+                              width: 20.0,
+                            ),
+                            RoundButton(
+                                onPress: () {
+                                  setState(() {
+                                    selectedAge++;
+                                  });
+                                },
+                                icon: FontAwesomeIcons.plus,
+                                color: kFAB_BG),
+                          ],
+                        )
+                      ],
+                    ),
                   ),
                 )
               ],
             ),
           ),
-          Container(
-            color: kPINK,
-            height: kBOTTOM_CONTAINER_HEIGHT,
-            width: double.infinity,
+          SafeArea(
+            child: Container(
+              color: kPINK,
+              height: kBOTTOM_CONTAINER_HEIGHT,
+              width: double.infinity,
+              child: Center(
+                child: Text(
+                  'CALCULATE YOUR BMI',
+                  style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+                ),
+              ),
+            ),
           )
         ],
       ),

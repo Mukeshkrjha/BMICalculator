@@ -10,8 +10,11 @@ const double kLARGE_FONT_SIZE = 50.0;
 const FontWeight kLARGE_FONT_WEIGHT = FontWeight.w900;
 const kSLIDER_MIN_VALUE = 120.0;
 const kSLIDER_MAX_VALUE = 250.0;
-const kSLIDER_ACTIVE_COLOR = Color(0xFFEB1555);
-const kSLIDER_INACTIVE_COLOR = Color(0xFF8D8E98);
+const kSLIDER_THUMB_COLOR = Color(0xFFEB1555);
+const kSLIDER_OVERLAY_COLOR = Color(0x29EB1555);
+const kSLIDER_INACTIVE_TRACK_COLOR = Color(0xFF8D8E98);
+const kSLIDER_ACTIVE_TRACK_COLOR = Colors.white;
+const kFAB_BG = Color(0xFF4C4F5E);
 
 const TextStyle kTEXT_STYLE =
     TextStyle(fontSize: kNORMAL_FONT_SIZE, color: kTEXT_COLOR);
