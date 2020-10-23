@@ -17,6 +17,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   GENDER selectedGender;
+  int selectedHeight = 185;
 
   @override
   Widget build(BuildContext context) {
@@ -77,7 +78,7 @@ class _HomeState extends State<Home> {
                     textBaseline: TextBaseline.alphabetic,
                     children: [
                       Text(
-                        '183',
+                        selectedHeight.toString(),
                         style: kLARGE_TEXT_STYLE,
                       ),
                       Text(
@@ -86,6 +87,18 @@ class _HomeState extends State<Home> {
                       )
                     ],
                   ),
+                  Slider(
+                    value: selectedHeight.toDouble(),
+                    min: kSLIDER_MIN_VALUE,
+                    max: kSLIDER_MAX_VALUE,
+                    activeColor: kSLIDER_ACTIVE_COLOR,
+                    inactiveColor: kSLIDER_INACTIVE_COLOR,
+                    onChanged: (double value) {
+                      setState(() {
+                        selectedHeight = value.round();
+                      });
+                    },
+                  )
                 ],
               ),
             ),
