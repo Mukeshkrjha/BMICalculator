@@ -1,16 +1,22 @@
 import 'package:flutter/material.dart';
 
-class Custom_Card extends StatelessWidget {
-  Color color;
+class CustomCard extends StatelessWidget {
+  final Color color;
+  final Widget child;
+  final Function onPress;
 
-  Custom_Card({@required this.color});
+  CustomCard({@required this.color, this.child, this.onPress});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.all(15.0),
-      decoration: BoxDecoration(
-          color: color, borderRadius: BorderRadius.circular(10.0)),
+    return GestureDetector(
+      onTap: onPress,
+      child: Container(
+        child: child,
+        margin: EdgeInsets.all(15.0),
+        decoration: BoxDecoration(
+            color: color, borderRadius: BorderRadius.circular(10.0)),
+      ),
     );
   }
 }
