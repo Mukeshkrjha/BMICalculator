@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_health_bmi_calculator/custom_widget/card.dart';
+import 'package:flutter_health_bmi_calculator/custom_widget/custom_bottom_button.dart';
 import 'package:flutter_health_bmi_calculator/custom_widget/round_button.dart';
+import 'package:flutter_health_bmi_calculator/result.dart';
 import 'package:flutter_health_bmi_calculator/util/app_constant.dart';
+import 'package:flutter_health_bmi_calculator/util/bmi_brain.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'custom_widget/custom_icon.dart';
@@ -206,16 +209,20 @@ class _HomeState extends State<Home> {
             ),
           ),
           SafeArea(
-            child: Container(
-              color: kPINK,
-              height: kBOTTOM_CONTAINER_HEIGHT,
-              width: double.infinity,
-              child: Center(
-                child: Text(
-                  'CALCULATE YOUR BMI',
-                  style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
-                ),
-              ),
+            child: CustomBottomButton(
+              onTap: () {
+                BMIBrain brain =
+                    BMIBrain(height: selectedHeight, weight: selectedWeight);
+
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => Result(
+                            bmiResult: brain.calculateBMI(),
+                            bmiResultText: brain.getResult(),
+                            bmiInterpretation: brain.getCorelation())));
+              },
+              buttonText: 'CALCULATE BMI',
             ),
           )
         ],

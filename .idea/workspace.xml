@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="b014b04e-42f2-4ff8-bcad-7ec4b5a5a786" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/custom_widget/round_button.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/custom_widget/custom_bottom_button.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/result.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/util/bmi_brain.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/07927b7add28ac018fe41cbcc6c10c59/.filecache" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/07927b7add28ac018fe41cbcc6c10c59/.filecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/07927b7add28ac018fe41cbcc6c10c59/app.dill" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/07927b7add28ac018fe41cbcc6c10c59/app.dill" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/07927b7add28ac018fe41cbcc6c10c59/kernel_snapshot.d" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/07927b7add28ac018fe41cbcc6c10c59/kernel_snapshot.d" afterDir="false" />
@@ -22,6 +27,7 @@
       <change beforePath="$PROJECT_DIR$/build/ios/iphonesimulator/Runner.app/Runner" beforeDir="false" afterPath="$PROJECT_DIR$/build/ios/iphonesimulator/Runner.app/Runner" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/ios/iphonesimulator/Runner.app/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/build/ios/iphonesimulator/Runner.app/_CodeSignature/CodeResources" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/home.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/util/app_constant.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/util/app_constant.dart" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -86,7 +92,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603438694430</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Weight and Age layout ready and functional">
+      <created>1603453054981</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1603453054981</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -106,6 +119,18 @@
     <MESSAGE value="Gender selection layout and functionality done" />
     <MESSAGE value="Gender selection layout and functionality done&#10;Height basic layout done" />
     <MESSAGE value="Height selection slider functional" />
-    <option name="LAST_COMMIT_MESSAGE" value="Height selection slider functional" />
+    <MESSAGE value="Weight and Age layout ready and functional" />
+    <option name="LAST_COMMIT_MESSAGE" value="Weight and Age layout ready and functional" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/home.dart</url>
+          <line>210</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
